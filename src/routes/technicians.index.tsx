@@ -23,9 +23,9 @@ export const Route = createFileRoute("/technicians/")({
   validateSearch: searchSchema,
   head: () => ({
     meta: [
-      { title: "Find a repair professional — FixTrust" },
+      { title: "Find a repair professional — RuralClap" },
       { name: "description", content: "Search and filter sample repair professionals by service, area and problem." },
-      { property: "og:title", content: "Find a repair professional — FixTrust" },
+      { property: "og:title", content: "Find a repair professional — RuralClap" },
       { property: "og:description", content: "Compare pros by pricing, experience and reviews." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

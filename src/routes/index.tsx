@@ -2,6 +2,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { Search, X, WashingMachine, Zap, Droplets, Tv, Hammer, Wrench, ReceiptText, ShieldCheck, FolderClock, ArrowRight, ArrowUpRight, Sparkles, CalendarCheck, ClipboardList } from "lucide-react";
 import workbench from "@/assets/workbench.jpg";
+import logo from "@/assets/ruralclap-logo.png";
 import { Button } from "@/components/ui/button";
 import { Offers } from "@/components/site/Offers";
 import { ExpandingImage, ScrollText, SpotlightCard, SplitText, TextShuffle, ScrollStack, TiltCard } from "@/components/site/Effects";
@@ -50,9 +51,9 @@ const featuredServices = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "FixTrust | Trusted Local Repair Services" },
+      { title: "RuralClap | Trusted Local Repair Services" },
       { name: "description", content: "Find local repair professionals, compare transparent estimates, book services, and keep track of your repair history." },
-      { property: "og:title", content: "FixTrust | Trusted Local Repair Services" },
+      { property: "og:title", content: "RuralClap | Trusted Local Repair Services" },
       { property: "og:description", content: "Find local repair professionals, compare transparent estimates, book services, and keep track of your repair history." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://fixtrustt.lovable.app/" },
@@ -82,7 +83,8 @@ function Index() {
         <div className="hero-split-bg" />
         <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-6 pb-20 pt-28 lg:grid-cols-[1.2fr_1fr] lg:pb-32 lg:pt-36">
           <div>
-            <span className="hero-badge animate-rise">Home repair, reconsidered</span>
+            <img src={logo} alt="RuralClap" width={500} height={548} className="h-28 w-auto animate-rise md:h-32" />
+            <span className="hero-badge mt-6 inline-block animate-rise">Home repair, reconsidered</span>
             <SplitText text="Repair professionals you can actually trust." highlight="actually" delay={300} className="mt-6 font-display text-5xl leading-[0.9] sm:text-6xl lg:text-[5.5rem]" />
             <p className="mt-7 max-w-lg animate-rise text-lg leading-relaxed text-muted-foreground" style={{ animationDelay: "800ms" }}>
               Compare local pros by honest prices, real experience and a record of every job done.
@@ -240,11 +242,11 @@ function Index() {
         </div>
       </section>
 
-      {/* ── How FixTrust Works: 3 steps ── */}
+      {/* ── How RuralClap Works: 3 steps ── */}
       <section className="section-muted py-28">
         <div className="mx-auto max-w-7xl px-6">
           <Reveal className="text-center">
-            <TextShuffle text="How FixTrust works" delay={80} className="font-display text-4xl md:text-5xl" />
+            <TextShuffle text="How RuralClap works" delay={80} className="font-display text-4xl md:text-5xl" />
             <p className="mx-auto mt-3 max-w-md text-muted-foreground">Three simple steps from broken to fixed.</p>
           </Reveal>
           <Reveal className="mt-16">
@@ -266,11 +268,11 @@ function Index() {
         </div>
       </section>
 
-      {/* ── Why FixTrust: trust features ── */}
+      {/* ── Why RuralClap: trust features ── */}
       <section className="mx-auto max-w-7xl px-6 py-28">
         <Reveal className="flex items-end justify-between gap-6">
           <div>
-            <TextShuffle text="Why FixTrust" delay={80} className="font-display text-4xl md:text-5xl" />
+            <TextShuffle text="Why RuralClap" delay={80} className="font-display text-4xl md:text-5xl" />
             <p className="mt-3 max-w-md text-muted-foreground">Built on principles that put you in control of every repair.</p>
           </div>
         </Reveal>
@@ -361,6 +363,7 @@ function Index() {
             ))}
           </div>
         </div>
+        </div>
       </section>
 
       {/* ── Scroll Expand image ── */}
@@ -376,7 +379,7 @@ function Index() {
         <Reveal className="glare-hover bg-ink px-8 py-24 text-center text-highlight md:py-32">
           <Sparkles className="mx-auto size-8 text-highlight/60" />
           <h2 className="mt-6 font-display text-6xl md:text-8xl">Fix it once. Fix it right.</h2>
-          <p className="mx-auto mt-4 max-w-md opacity-80">See how FixTrust works, or start comparing professionals now.</p>
+          <p className="mx-auto mt-4 max-w-md opacity-80">See how RuralClap works, or start comparing professionals now.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link to="/technicians" className="btn-premium bg-highlight text-highlight-foreground transition hover:opacity-90">Find a pro</Link>
             <Link to="/how-it-works" className="btn-premium border border-highlight/40 text-highlight transition hover:bg-highlight/10">How it works</Link>

@@ -9,9 +9,9 @@ export const Route = createFileRoute("/estimate")({
   validateSearch: z.object({ category: z.string().max(30).optional() }),
   head: () => ({
     meta: [
-      { title: "Repair cost estimator — FixTrust" },
+      { title: "Repair cost estimator — RuralClap" },
       { name: "description", content: "See indicative inspection, labour and parts costs for common home repairs before you book." },
-      { property: "og:title", content: "Repair cost estimator — FixTrust" },
+      { property: "og:title", content: "Repair cost estimator — RuralClap" },
       { property: "og:description", content: "Indicative inspection, labour and parts costs, shown separately." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

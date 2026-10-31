@@ -5,9 +5,9 @@ import { Reveal } from "@/components/site/Reveal";
 export const Route = createFileRoute("/how-it-works")({
   head: () => ({
     meta: [
-      { title: "How FixTrust works" },
-      { name: "description", content: "Search, compare, book and keep a record — the FixTrust journey in four steps." },
-      { property: "og:title", content: "How FixTrust works" },
+      { title: "How RuralClap works" },
+      { name: "description", content: "Search, compare, book and keep a record — the RuralClap journey in four steps." },
+      { property: "og:title", content: "How RuralClap works" },
       { property: "og:description", content: "From problem to lasting repair record in four steps." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
