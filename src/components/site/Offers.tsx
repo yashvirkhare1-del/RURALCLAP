@@ -8,17 +8,17 @@ const icons = { plumbing: Droplets, electrical: Zap, maintenance: House, applian
 
 export function Offers() {
   return (
-    <section id="offers" aria-labelledby="offers-heading" className="mx-auto max-w-6xl px-6 pt-28">
+    <section id="offers" aria-labelledby="offers-heading" className="mx-auto max-w-7xl px-6 pt-32">
       <Reveal className="flex flex-wrap items-end justify-between gap-6">
-        <div><p className="text-sm font-semibold uppercase text-primary">Offers & Deals</p><h2 id="offers-heading" className="mt-3 max-w-xl font-display text-5xl leading-none md:text-7xl">Good repairs.<br />Better deals.</h2></div>
+        <div><p className="section-eyebrow">Offers & Deals</p><h2 id="offers-heading" className="mt-3 max-w-xl font-display text-5xl leading-none md:text-7xl">Good repairs.<br />Better deals.</h2></div>
         <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">Demo offers, not live promotions. No discounts are applied to bookings.</p>
       </Reveal>
       <div className="offer-grid mt-10">
         {demoOffers.map((offer, i) => {
           const Icon = icons[offer.icon as keyof typeof icons];
           return <Reveal key={offer.id} delay={i * 80} className="h-full">
-            <article className="lift group flex h-full flex-col overflow-hidden rounded-lg border border-border bg-card">
-              <div className="offer-art relative flex h-44 items-center justify-center overflow-hidden bg-accent text-primary">
+            <article className="lift group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-[0_18px_50px_-36px_var(--ink)]">
+              <div className="offer-art relative flex h-48 items-center justify-center overflow-hidden bg-accent text-primary">
                 <span className="absolute left-4 top-4 text-xs font-semibold uppercase">{offer.tag}</span>
                 <span aria-hidden className="offer-art-lines absolute inset-0" />
                 <Icon aria-hidden strokeWidth={1.2} className="relative size-20 transition-transform duration-500 group-hover:scale-110" />

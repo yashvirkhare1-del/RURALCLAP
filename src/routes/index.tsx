@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { Search, X, WashingMachine, Zap, Droplets, Tv, Hammer, Wrench, ReceiptText, ShieldCheck, FolderClock, ArrowRight, ArrowUpRight, Sparkles, CalendarCheck, ClipboardList } from "lucide-react";
+import { Search, X, WashingMachine, Zap, Droplets, Tv, Hammer, Wrench, ReceiptText, ShieldCheck, FolderClock, ArrowRight, ArrowUpRight, Sparkles, CalendarCheck, ClipboardList, CheckCircle2, MapPin } from "lucide-react";
 import workbench from "@/assets/workbench.jpg";
 import { Button } from "@/components/ui/button";
 import { Offers } from "@/components/site/Offers";
@@ -16,11 +16,12 @@ const howItWorksSteps = [
   { num: "1", icon: ClipboardList, title: "Choose a service", desc: "Browse categories and describe what needs fixing. The more detail, the better the match." },
   { num: "2", icon: CalendarCheck, title: "Book a professional", desc: "Compare pros by experience, price and reviews. Pick a time that works for you." },
   { num: "3", icon: FolderClock, title: "Track your repair", desc: "Every job, part and warranty is saved to your repair history for future reference." },
+  { num: "4", icon: CheckCircle2, title: "Get it done", desc: "Welcome your professional, approve the work and keep the final record for next time." },
 ] as const;
 
 const whyFeatures = [
   { icon: ReceiptText, title: "Transparent pricing", desc: "See inspection charges, labour and parts separately before any work begins. No hidden costs, ever." },
-  { icon: CalendarCheck, title: "Convenient booking", desc: "Pick a time slot that fits your schedule. Get a confirmation saved instantly to your device." },
+  { icon: CalendarCheck, title: "Visible professional experience", desc: "Compare years of experience, completed jobs, skills and reviews before you choose." },
   { icon: FolderClock, title: "Repair tracking", desc: "Every repair, replaced part and warranty is stored in your home's repair history — always accessible." },
 ] as const;
 
@@ -82,13 +83,13 @@ function Index() {
         <div className="hero-split-bg" />
         <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-6 pb-20 pt-28 lg:grid-cols-[1.2fr_1fr] lg:pb-32 lg:pt-36">
           <div>
-            <span className="hero-badge inline-block animate-rise">Home repair, reconsidered</span>
-            <SplitText text="Repair professionals you can actually trust." highlight="actually" delay={300} className="mt-6 font-display text-5xl leading-[0.9] sm:text-6xl lg:text-[5.5rem]" />
-            <p className="mt-7 max-w-lg animate-rise text-lg leading-relaxed text-muted-foreground" style={{ animationDelay: "800ms" }}>
-              Compare local pros by honest prices, real experience and a record of every job done.
+            <span className="hero-badge animate-rise">Home repair, reconsidered</span>
+            <SplitText text="Reliable home services. Right where you need them." highlight="Right" delay={300} className="mt-6 max-w-3xl font-display text-5xl leading-[0.9] sm:text-6xl lg:text-[5.5rem]" />
+            <p className="mt-7 max-w-xl animate-rise text-lg leading-relaxed text-muted-foreground" style={{ animationDelay: "800ms" }}>
+              Find trusted local professionals for everyday repairs, maintenance and home improvement. Transparent estimates, simple bookings and dependable service.
             </p>
             <div className="mt-9 flex animate-rise flex-wrap items-center gap-3" style={{ animationDelay: "950ms" }}>
-              <Link to="/technicians" className="btn-premium btn-premium-primary">Find a professional <ArrowRight className="size-4" /></Link>
+              <Link to="/technicians" className="btn-premium btn-premium-primary">Book a repair <ArrowRight className="size-4" /></Link>
               <Link to="/estimate" className="btn-premium border border-border bg-card/80 backdrop-blur-sm text-foreground transition hover:border-primary/40 hover:bg-muted">Estimate a repair</Link>
             </div>
             <div className="mt-10 flex animate-rise flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground" style={{ animationDelay: "1100ms" }}>
@@ -99,8 +100,8 @@ function Index() {
           </div>
 
           {/* Right visual with floating cards */}
-          <div className="relative animate-rise" style={{ animationDelay: "400ms" }}>
-            <div className="relative overflow-hidden rounded-[1.75rem] border border-border shadow-[0_30px_80px_-30px_var(--ink)]">
+          <div className="relative animate-rise lg:pl-8" style={{ animationDelay: "400ms" }}>
+            <div className="hero-visual relative overflow-hidden rounded-[1.75rem] border border-border shadow-[0_30px_80px_-30px_var(--ink)]">
               <img src={heroPhoto} alt="Professional repair technician with diagnostic tools" width={900} height={1200} fetchPriority="high" className="aspect-[4/5] w-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent" />
             </div>
@@ -137,29 +138,18 @@ function Index() {
               </div>
             </div>
 
-            {/* Floating card: category chip */}
-            <div className="float-card left-8 top-4 hidden items-center gap-2 px-4 py-2.5 md:flex">
-              <WashingMachine className="size-4 text-primary" />
-              <span className="text-sm font-medium">Appliance repair</span>
-              <span className="ml-1 rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-semibold text-primary">6 pros</span>
-            </div>
           </div>
         </div>
 
         {/* ── Search bar ── */}
         <div className="relative z-10 mx-auto max-w-7xl px-6 pb-8">
-          <form onSubmit={search} className="animate-rise" style={{ animationDelay: "1200ms" }}>
-            <div className="grid gap-2 rounded-2xl border border-border bg-card p-2.5 shadow-[0_24px_60px_-30px_var(--ink)] md:grid-cols-[1fr_1fr_1.4fr_auto]">
-              <input aria-label="Location" value={loc} onChange={(e) => setLoc(e.target.value)} maxLength={60} placeholder="Your area" className="rounded-xl bg-muted/40 px-4 py-3.5 text-sm outline-none transition focus:bg-muted" />
-              <select aria-label="Category" value={cat} onChange={(e) => setCat(e.target.value)} className="rounded-xl bg-muted/40 px-4 py-3.5 text-sm outline-none transition focus:bg-muted">
-                <option value="">Any service</option>
-                {categories.map((c) => <option key={c.slug} value={c.slug}>{c.name}</option>)}
-              </select>
-              <div className="relative">
-                <input aria-label="Problem" value={q} onChange={(e) => setQ(e.target.value)} maxLength={80} placeholder="Describe the problem, e.g. washer leaking" className="w-full rounded-xl bg-muted/40 px-4 py-3.5 pr-9 text-sm outline-none transition focus:bg-muted" />
-                {q && <Button variant="ghost" size="icon" type="button" aria-label="Clear" onClick={() => setQ("")} className="absolute right-1 top-1/2 -translate-y-1/2 text-muted-foreground"><X className="size-4" /></Button>}
-              </div>
-              <Button type="submit" className="h-auto rounded-xl bg-ink px-6 py-3.5 text-highlight hover:bg-ink/90"><Search className="size-4" />Search</Button>
+          <form onSubmit={search} className="hero-search animate-rise" style={{ animationDelay: "1200ms" }}>
+            <div className="mb-4 flex items-center gap-2 text-sm font-semibold text-foreground"><Search className="size-4 text-primary" /> Find a professional for your repair</div>
+            <div className="grid gap-2 md:grid-cols-[1fr_1fr_1.4fr_auto]">
+              <label className="search-field"><MapPin className="size-4 text-primary" /><input aria-label="Location" value={loc} onChange={(e) => setLoc(e.target.value)} maxLength={60} placeholder="Your area" /></label>
+              <label className="search-field"><Wrench className="size-4 text-primary" /><select aria-label="Category" value={cat} onChange={(e) => setCat(e.target.value)}><option value="">Any service</option>{categories.map((c) => <option key={c.slug} value={c.slug}>{c.name}</option>)}</select></label>
+              <label className="search-field"><Search className="size-4 text-primary" /><span className="relative min-w-0 flex-1"><input aria-label="Problem" value={q} onChange={(e) => setQ(e.target.value)} maxLength={80} placeholder="What needs fixing?" />{q && <Button variant="ghost" size="icon" type="button" aria-label="Clear" onClick={() => setQ("")} className="absolute right-0 top-1/2 size-7 -translate-y-1/2 text-muted-foreground"><X className="size-4" /></Button>}</span></label>
+              <Button type="submit" className="h-auto rounded-xl bg-ink px-7 py-4 text-highlight hover:bg-ink/90"><Search className="size-4" />Search</Button>
             </div>
           </form>
         </div>
@@ -167,7 +157,7 @@ function Index() {
 
       {/* ── Stats strip ── */}
       <section className="mx-auto max-w-7xl px-6">
-        <Reveal className="stats-strip rounded-2xl bg-card">
+        <Reveal className="stats-strip rounded-2xl bg-card shadow-[0_20px_60px_-40px_var(--ink)]">
           {stats.map((s) => (
             <div key={s.label}>
               <p className="font-display text-4xl text-primary md:text-5xl">{s.num}</p>
@@ -183,8 +173,9 @@ function Index() {
       <section className="mx-auto max-w-7xl px-6 pt-32">
         <Reveal className="flex items-end justify-between gap-6">
           <div>
-            <TextShuffle text="What needs fixing?" delay={100} className="font-display text-4xl md:text-5xl" />
-            <p className="mt-3 max-w-md text-muted-foreground">Four common services. One trusted network of local professionals.</p>
+            <p className="section-eyebrow">Services made simple</p>
+            <TextShuffle text="What needs fixing?" delay={100} className="mt-3 font-display text-4xl md:text-5xl" />
+            <p className="mt-4 max-w-md text-muted-foreground">From everyday fixes to bigger home projects, find the right professional in a few clicks.</p>
           </div>
           <Link to="/technicians" className="hidden items-center gap-1 text-sm font-medium text-primary transition hover:gap-2 md:flex">View all <ArrowRight className="size-4" /></Link>
         </Reveal>
@@ -244,8 +235,9 @@ function Index() {
       <section className="section-muted py-28">
         <div className="mx-auto max-w-7xl px-6">
           <Reveal className="text-center">
-            <TextShuffle text="How RuralClap works" delay={80} className="font-display text-4xl md:text-5xl" />
-            <p className="mx-auto mt-3 max-w-md text-muted-foreground">Three simple steps from broken to fixed.</p>
+            <p className="section-eyebrow">A better way to repair</p>
+            <TextShuffle text="How RuralClap works" delay={80} className="mt-3 font-display text-4xl md:text-5xl" />
+            <p className="mx-auto mt-4 max-w-md text-muted-foreground">Four simple steps from broken to fixed.</p>
           </Reveal>
           <Reveal className="mt-16">
             <div className="steps-row">
@@ -270,8 +262,9 @@ function Index() {
       <section className="mx-auto max-w-7xl px-6 py-28">
         <Reveal className="flex items-end justify-between gap-6">
           <div>
-            <TextShuffle text="Why RuralClap" delay={80} className="font-display text-4xl md:text-5xl" />
-            <p className="mt-3 max-w-md text-muted-foreground">Built on principles that put you in control of every repair.</p>
+            <p className="section-eyebrow">The RuralClap difference</p>
+            <TextShuffle text="Why RuralClap" delay={80} className="mt-3 font-display text-4xl md:text-5xl" />
+            <p className="mt-4 max-w-md text-muted-foreground">Built on clarity, experience and records that put you in control of every repair.</p>
           </div>
         </Reveal>
         <div className="mt-14 grid gap-6 md:grid-cols-3">

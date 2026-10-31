@@ -6,9 +6,9 @@ import { SpotlightCard } from "./Effects";
 export function TechCard({ t }: { t: Technician }) {
   return (
     <SpotlightCard className="rounded-2xl">
-    <Link to="/technicians/$id" params={{ id: t.id }} className="lift group block rounded-2xl border border-border bg-card p-6">
+    <Link to="/technicians/$id" params={{ id: t.id }} className="lift group block rounded-2xl border border-border bg-card p-7 shadow-[0_18px_50px_-36px_var(--ink)]">
       <div className="flex items-start justify-between">
-        <div className="flex size-12 items-center justify-center rounded-full bg-accent font-medium text-accent-foreground">{t.initials}</div>
+        <div className="flex size-14 items-center justify-center rounded-2xl bg-accent font-display text-2xl text-accent-foreground">{t.initials}</div>
         <span className="rounded-full bg-muted px-2.5 py-1 text-[11px] text-muted-foreground">Sample profile</span>
       </div>
       <h3 className="mt-5 text-lg font-semibold">{t.name}</h3>

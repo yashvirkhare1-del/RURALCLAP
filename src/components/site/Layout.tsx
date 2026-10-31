@@ -25,9 +25,9 @@ export function Header() {
   }, []);
   return (
     <header className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? "border-b border-border bg-background/85 backdrop-blur-lg" : "bg-transparent"}`}>
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3.5 lg:py-4">
         <Link to="/" aria-label="RuralClap home"><Brand className="h-10" /></Link>
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-6 lg:gap-7 md:flex">
           {nav.map((n) => (
             <Link key={n.to} to={n.to} className="nav-link text-sm text-muted-foreground transition-colors hover:text-foreground" activeProps={{ className: "text-sm text-foreground" }}>{n.label}</Link>
           ))}
@@ -41,7 +41,7 @@ export function Header() {
               <span className="hidden lg:inline">{soundOn ? "Sound on" : "Sound off"}</span>
             </button>
           </div>
-          <Button asChild className="rounded-full bg-ink px-5 text-highlight hover:bg-ink/90"><Link to="/technicians">Book a repair</Link></Button>
+          <Button asChild className="rounded-full bg-ink px-5 font-semibold text-highlight shadow-[0_8px_20px_-12px_var(--ink)] transition hover:-translate-y-0.5 hover:bg-ink/90"><Link to="/technicians">Book a repair</Link></Button>
         </nav>
         <div className="flex items-center gap-2 md:hidden">
           <button type="button" className="theme-toggle" aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"} onClick={() => toggleTheme()}>
