@@ -1,3 +1,9 @@
-export function Brand() {
-  return <span className="inline-flex items-center gap-2.5"><img src="/favicon.svg" alt="" width={34} height={34} className="size-8" /><span className="text-lg font-semibold">Fix<span className="text-primary">Trust</span></span></span>;
+import logo from "@/assets/ruralclap-logo.png";
+
+export function Brand({ className = "h-11" }: { className?: string }) {
+  return (
+    <span className="inline-flex items-center">
+      <img src={logo} alt="RuralClap" width={500} height={548} className={`w-auto ${className}`} />
+    </span>
+  );
 }

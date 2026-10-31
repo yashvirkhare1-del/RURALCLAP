@@ -26,7 +26,7 @@ export function Header() {
   return (
     <header className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? "border-b border-border bg-background/85 backdrop-blur-lg" : "bg-transparent"}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link to="/" aria-label="RuralClap home"><Brand /></Link>
+        <Link to="/" aria-label="RuralClap home"><Brand className="h-10" /></Link>
         <nav className="hidden items-center gap-7 md:flex">
           {nav.map((n) => (
             <Link key={n.to} to={n.to} className="nav-link text-sm text-muted-foreground transition-colors hover:text-foreground" activeProps={{ className: "text-sm text-foreground" }}>{n.label}</Link>
@@ -76,7 +76,7 @@ export function Footer() {
     <footer className="mt-32 border-t border-border">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
-          <Link to="/" aria-label="RuralClap home"><Brand /></Link>
+          <Link to="/" aria-label="RuralClap home"><Brand className="h-16" /></Link>
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">Transparent pricing, real experience and lasting repair records for every home.</p>
         </div>
         <div className="flex flex-col gap-2 text-sm">
@@ -113,7 +113,7 @@ export function Intro() {
   if (!show) return null;
   return (
       <div aria-hidden className="pointer-events-none fixed inset-0 z-50 flex animate-loader flex-col items-center justify-center bg-ink text-primary-foreground">
-      <p className="font-display text-6xl font-black uppercase md:text-8xl">Fix<span className="text-highlight">Trust</span></p>
+      <p className="font-display text-6xl font-black uppercase md:text-8xl">Rural<span className="text-highlight">Clap</span></p>
       <div className="mt-6 h-1 w-48 overflow-hidden rounded-full bg-highlight-foreground/15"><div className="h-full animate-bar bg-highlight-foreground" /></div>
       <p className="absolute bottom-10 text-sm font-semibold uppercase tracking-widest">Loading trust</p>
     </div>
