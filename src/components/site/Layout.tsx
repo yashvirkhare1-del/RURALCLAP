@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, Volume2, VolumeX, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Brand, Wordmark } from "./Brand";
+import { Brand } from "./Brand";
 import { useSoundEnabled, toggleSound, playClick } from "@/lib/sound";
 import { useTheme, toggleTheme } from "@/lib/theme";
 
@@ -26,7 +26,7 @@ export function Header() {
   return (
     <header className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? "border-b border-border bg-background/85 backdrop-blur-lg" : "bg-transparent"}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link to="/" aria-label="RuralClap home" className="transition hover:opacity-80"><Wordmark /></Link>
+        <Link to="/" aria-label="RuralClap home"><Brand className="h-10" /></Link>
         <nav className="hidden items-center gap-7 md:flex">
           {nav.map((n) => (
             <Link key={n.to} to={n.to} className="nav-link text-sm text-muted-foreground transition-colors hover:text-foreground" activeProps={{ className: "text-sm text-foreground" }}>{n.label}</Link>
