@@ -2,6 +2,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { Search, X, WashingMachine, Zap, Droplets, Tv, Hammer, Wrench, ReceiptText, ShieldCheck, FolderClock, ArrowRight, ArrowUpRight, Sparkles, CalendarCheck, ClipboardList } from "lucide-react";
 import workbench from "@/assets/workbench.jpg";
+import logo from "@/assets/ruralclap-logo.png";
 import { Button } from "@/components/ui/button";
 import { Offers } from "@/components/site/Offers";
 import { ExpandingImage, ScrollText, SpotlightCard, SplitText, TextShuffle, ScrollStack, TiltCard } from "@/components/site/Effects";
