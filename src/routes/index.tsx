@@ -2,7 +2,6 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { Search, X, WashingMachine, Zap, Droplets, Tv, Hammer, Wrench, ReceiptText, ShieldCheck, FolderClock, ArrowRight, ArrowUpRight, Sparkles, CalendarCheck, ClipboardList } from "lucide-react";
 import workbench from "@/assets/workbench.jpg";
-import logo from "@/assets/ruralclap-logo.png";
 import { Button } from "@/components/ui/button";
 import { Offers } from "@/components/site/Offers";
 import { ExpandingImage, ScrollText, SpotlightCard, SplitText, TextShuffle, ScrollStack, TiltCard } from "@/components/site/Effects";
@@ -83,7 +82,6 @@ function Index() {
         <div className="hero-split-bg" />
         <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-6 pb-20 pt-28 lg:grid-cols-[1.2fr_1fr] lg:pb-32 lg:pt-36">
           <div>
-            <img src={logo} alt="RuralClap" width={500} height={548} className="h-14 w-auto animate-rise md:h-16" />
             <span className="hero-badge mt-6 inline-block animate-rise">Home repair, reconsidered</span>
             <SplitText text="Repair professionals you can actually trust." highlight="actually" delay={300} className="mt-6 font-display text-5xl leading-[0.9] sm:text-6xl lg:text-[5.5rem]" />
             <p className="mt-7 max-w-lg animate-rise text-lg leading-relaxed text-muted-foreground" style={{ animationDelay: "800ms" }}>
