@@ -3,7 +3,7 @@ import { useSyncExternalStore } from "react";
 const KEY = "ft-theme";
 const listeners = new Set<() => void>();
 type Theme = "light" | "dark";
-let current: Theme = "light";
+let current: Theme = "dark";
 let initialized = false;
 
 function init() {
@@ -13,7 +13,7 @@ function init() {
   const stored = window.localStorage.getItem(KEY);
   if (stored === "dark" || stored === "light") {
     current = stored;
-  } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  } else {
     current = "dark";
   }
   applyClass(current);
@@ -56,9 +56,9 @@ function subscribe(l: () => void) {
 }
 
 export function useTheme(): Theme {
-  return useSyncExternalStore(subscribe, () => current, () => "light" as Theme);
+  return useSyncExternalStore(subscribe, () => current, () => "dark" as Theme);
 }
 
 export function initThemeScript(): string {
-  return `(function(){try{var t=localStorage.getItem("${KEY}");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.classList.add("dark");}}catch(e){}})()`;
+  return `(function(){try{var t=localStorage.getItem("${KEY}");if(t!=="light"){document.documentElement.classList.add("dark");}}catch(e){document.documentElement.classList.add("dark");}})()`;
 }

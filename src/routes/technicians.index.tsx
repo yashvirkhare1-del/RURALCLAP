@@ -60,14 +60,14 @@ function Page() {
         <div className="relative">
           <Search className="absolute left-4 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
           <input aria-label="Search" value={q} maxLength={80} onChange={(e) => set({ q: e.target.value })} placeholder="Problem, skill or name" className="w-full rounded-full border border-input bg-card py-3 pl-11 pr-10 text-sm outline-none transition focus:border-primary focus:ring-4 focus:ring-ring/15" />
-          {q && <button aria-label="Clear search" onClick={() => set({ q: "" })} className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground"><X className="size-4" /></button>}
+          {q && <button type="button" aria-label="Clear search" onClick={() => set({ q: "" })} className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground"><X className="size-4" /></button>}
         </div>
         <input aria-label="Area" value={area} maxLength={60} onChange={(e) => set({ area: e.target.value })} placeholder="Area or city" className="w-full rounded-full border border-input bg-card px-5 py-3 text-sm outline-none transition focus:border-primary focus:ring-4 focus:ring-ring/15" />
       </div>
 
       <div className="mt-6 flex flex-wrap gap-2">
         {[{ slug: "", name: "All" }, ...categories].map((c) => (
-          <button key={c.slug} onClick={() => set({ category: c.slug })} className={`rounded-full border px-4 py-2 text-sm transition ${category === c.slug ? "border-primary bg-primary text-primary-foreground" : "border-border hover:border-primary/40"}`}>{c.name}</button>
+          <button type="button" key={c.slug} aria-pressed={category === c.slug} onClick={() => set({ category: c.slug })} className={`rounded-full border px-4 py-2 text-sm transition ${category === c.slug ? "border-primary bg-primary text-primary-foreground" : "border-border hover:border-primary/40"}`}>{c.name}</button>
         ))}
       </div>
 

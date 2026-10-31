@@ -188,7 +188,7 @@ function Index() {
                 <TiltCard className="h-full rounded-[1.25rem]" max={6}>
                   <Link to="/technicians" search={{ category: c.slug }} className="svc-bento glare-hover group flex h-full flex-col">
                     <div className={`svc-bento-img relative ${c.img} w-full`}>
-                      <img src={photo} alt={c.name} loading="lazy" decoding="async" className="size-full object-cover" />
+                      <img src={photo} alt={c.name} width={800} height={500} loading="lazy" decoding="async" className="size-full object-cover" />
                       <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
                       <div className="absolute bottom-3 left-4 z-[3]">
                         <div className="svc-icon !w-11 !h-11 rounded-xl">

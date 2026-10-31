@@ -92,43 +92,43 @@
   --sidebar-ring: oklch(0.704 0.04 256.788);
 }
 
-/* ── Dark theme (midnight navy, cool silver, electric cyan) ── */
+/* ── Dark theme (charcoal, moss and lime) ── */
 .dark {
-  --background: oklch(0.13 0.02 255);
-  --foreground: oklch(0.97 0.003 240);
-  --card: oklch(0.17 0.025 255);
-  --card-foreground: oklch(0.97 0.003 240);
-  --popover: oklch(0.19 0.025 255);
-  --popover-foreground: oklch(0.97 0.003 240);
-  --primary: oklch(0.76 0.16 220);
-  --primary-foreground: oklch(0.13 0.02 255);
-  --highlight: oklch(0.80 0.14 220);
-  --highlight-foreground: oklch(0.13 0.02 255);
-  --ink: oklch(0.10 0.015 255);
-  --secondary: oklch(0.22 0.02 255);
-  --secondary-foreground: oklch(0.97 0.003 240);
-  --muted: oklch(0.21 0.015 255);
-  --muted-foreground: oklch(0.60 0.02 240);
-  --accent: oklch(0.24 0.04 230);
-  --accent-foreground: oklch(0.78 0.12 220);
+  --background: oklch(0.12 0.015 145);
+  --foreground: oklch(0.96 0.005 110);
+  --card: oklch(0.16 0.018 145);
+  --card-foreground: oklch(0.96 0.005 110);
+  --popover: oklch(0.19 0.02 145);
+  --popover-foreground: oklch(0.96 0.005 110);
+  --primary: oklch(0.72 0.15 145);
+  --primary-foreground: oklch(0.12 0.015 145);
+  --highlight: oklch(0.80 0.16 125);
+  --highlight-foreground: oklch(0.14 0.03 140);
+  --ink: oklch(0.07 0.012 145);
+  --secondary: oklch(0.21 0.02 145);
+  --secondary-foreground: oklch(0.96 0.005 110);
+  --muted: oklch(0.20 0.018 145);
+  --muted-foreground: oklch(0.68 0.015 120);
+  --accent: oklch(0.23 0.045 145);
+  --accent-foreground: oklch(0.80 0.13 135);
   --destructive: oklch(0.65 0.22 25);
-  --destructive-foreground: oklch(0.97 0.003 240);
-  --border: oklch(0.60 0.08 230 / 15%);
-  --input: oklch(0.60 0.08 230 / 20%);
-  --ring: oklch(0.76 0.16 220);
-  --chart-1: oklch(0.70 0.16 220);
-  --chart-2: oklch(0.60 0.10 200);
-  --chart-3: oklch(0.50 0.06 240);
-  --chart-4: oklch(0.75 0.14 190);
-  --chart-5: oklch(0.65 0.12 250);
-  --sidebar: oklch(0.17 0.025 255);
-  --sidebar-foreground: oklch(0.97 0.003 240);
-  --sidebar-primary: oklch(0.76 0.16 220);
-  --sidebar-primary-foreground: oklch(0.13 0.02 255);
-  --sidebar-accent: oklch(0.24 0.04 230);
-  --sidebar-accent-foreground: oklch(0.78 0.12 220);
-  --sidebar-border: oklch(0.60 0.08 230 / 15%);
-  --sidebar-ring: oklch(0.76 0.16 220);
+  --destructive-foreground: oklch(0.97 0.003 110);
+  --border: oklch(0.65 0.06 145 / 17%);
+  --input: oklch(0.65 0.06 145 / 22%);
+  --ring: oklch(0.72 0.15 145);
+  --chart-1: oklch(0.72 0.15 145);
+  --chart-2: oklch(0.65 0.10 125);
+  --chart-3: oklch(0.52 0.07 155);
+  --chart-4: oklch(0.78 0.14 105);
+  --chart-5: oklch(0.62 0.12 85);
+  --sidebar: oklch(0.16 0.018 145);
+  --sidebar-foreground: oklch(0.96 0.005 110);
+  --sidebar-primary: oklch(0.72 0.15 145);
+  --sidebar-primary-foreground: oklch(0.12 0.015 145);
+  --sidebar-accent: oklch(0.23 0.045 145);
+  --sidebar-accent-foreground: oklch(0.80 0.13 135);
+  --sidebar-border: oklch(0.65 0.06 145 / 17%);
+  --sidebar-ring: oklch(0.72 0.15 145);
 }
 
 
@@ -383,19 +383,19 @@ button:active { transform: scale(.98); }
 
 /* ── Glass surface (dark mode elevated panels) ── */
 .dark .bg-ink {
-  background: oklch(0.10 0.015 255) !important;
+  background: oklch(0.07 0.012 145) !important;
 }
 .dark .bg-highlight {
-  background: oklch(0.80 0.14 220) !important;
+  background: oklch(0.80 0.16 125) !important;
 }
 .dark .text-highlight {
-  color: oklch(0.82 0.13 220) !important;
+  color: oklch(0.84 0.15 125) !important;
 }
 .dark .text-highlight-foreground {
-  color: oklch(0.13 0.02 255) !important;
+  color: oklch(0.14 0.03 140) !important;
 }
 .dark .border-ink {
-  border-color: oklch(0.10 0.015 255) !important;
+  border-color: oklch(0.07 0.012 145) !important;
 }
 
 /* ── Theme transition ── */
@@ -482,7 +482,7 @@ button:active { transform: scale(.98); }
   position: fixed;
   top: -20%; right: -10%;
   width: 60vw; height: 60vh;
-  background: radial-gradient(ellipse at center, color-mix(in oklab, var(--primary) 12%, transparent) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, color-mix(in oklab, var(--primary) 14%, transparent) 0%, transparent 70%);
   pointer-events: none;
   z-index: -1;
   filter: blur(90px);
@@ -493,7 +493,7 @@ button:active { transform: scale(.98); }
   position: fixed;
   bottom: -20%; left: -10%;
   width: 55vw; height: 55vh;
-  background: radial-gradient(ellipse at center, color-mix(in oklab, var(--accent) 14%, transparent) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, color-mix(in oklab, var(--accent) 16%, transparent) 0%, transparent 70%);
   pointer-events: none;
   z-index: -1;
   filter: blur(90px);
@@ -601,10 +601,10 @@ button:active { transform: scale(.98); }
   filter: blur(60px);
 }
 .dark .hero-split-bg::before {
-  background: radial-gradient(ellipse, color-mix(in oklab, var(--primary) 12%, transparent) 0%, transparent 70%);
+  background: radial-gradient(ellipse, color-mix(in oklab, var(--primary) 18%, transparent) 0%, transparent 70%);
 }
 .dark .hero-split-bg::after {
-  background: radial-gradient(ellipse, color-mix(in oklab, var(--accent) 14%, transparent) 0%, transparent 70%);
+  background: radial-gradient(ellipse, color-mix(in oklab, var(--accent) 18%, transparent) 0%, transparent 70%);
 }
 
 /* ── Floating hero cards ── */
