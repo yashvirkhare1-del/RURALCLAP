@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, Volume2, VolumeX, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Wordmark } from "./Brand";
+import { Brand, Wordmark } from "./Brand";
 import { useSoundEnabled, toggleSound, playClick } from "@/lib/sound";
 import { useTheme, toggleTheme } from "@/lib/theme";
 
