@@ -82,7 +82,7 @@ function Index() {
         <div className="hero-split-bg" />
         <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-6 pb-20 pt-28 lg:grid-cols-[1.2fr_1fr] lg:pb-32 lg:pt-36">
           <div>
-            <span className="hero-badge mt-6 inline-block animate-rise">Home repair, reconsidered</span>
+            <span className="hero-badge inline-block animate-rise">Home repair, reconsidered</span>
             <SplitText text="Repair professionals you can actually trust." highlight="actually" delay={300} className="mt-6 font-display text-5xl leading-[0.9] sm:text-6xl lg:text-[5.5rem]" />
             <p className="mt-7 max-w-lg animate-rise text-lg leading-relaxed text-muted-foreground" style={{ animationDelay: "800ms" }}>
               Compare local pros by honest prices, real experience and a record of every job done.
