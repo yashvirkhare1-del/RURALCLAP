@@ -14,10 +14,10 @@ export const Route = createFileRoute("/book/$id")({
   },
   head: () => ({
     meta: [
-      { title: "Book a demo visit — FixTrust" },
-      { name: "description", content: "A simulated booking flow for the FixTrust prototype." },
-      { property: "og:title", content: "Book a demo visit — FixTrust" },
-      { property: "og:description", content: "Try the FixTrust booking experience." },
+      { title: "Book a demo visit — RuralClap" },
+      { name: "description", content: "A simulated booking flow for the RuralClap prototype." },
+      { property: "og:title", content: "Book a demo visit — RuralClap" },
+      { property: "og:description", content: "Try the RuralClap booking experience." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "robots", content: "noindex" },

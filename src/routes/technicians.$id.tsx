@@ -11,14 +11,14 @@ export const Route = createFileRoute("/technicians/$id")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.name} — ${categoryName(loaderData.category)} · FixTrust` },
+          { title: `${loaderData.name} — ${categoryName(loaderData.category)} · RuralClap` },
           { name: "description", content: loaderData.bio },
-          { property: "og:title", content: `${loaderData.name} on FixTrust` },
+          { property: "og:title", content: `${loaderData.name} on RuralClap` },
           { property: "og:description", content: loaderData.bio },
           { property: "og:type", content: "website" },
           { name: "twitter:card", content: "summary_large_image" },
         ]
-      : [{ title: "Professional not found — FixTrust" }, { name: "description", content: "This sample professional is unavailable. Browse FixTrust repair services." }, { property: "og:title", content: "Professional not found — FixTrust" }, { property: "og:description", content: "Browse FixTrust repair services." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }, { name: "robots", content: "noindex" }],
+      : [{ title: "Professional not found — RuralClap" }, { name: "description", content: "This sample professional is unavailable. Browse RuralClap repair services." }, { property: "og:title", content: "Professional not found — RuralClap" }, { property: "og:description", content: "Browse RuralClap repair services." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }, { name: "robots", content: "noindex" }],
   }),
   notFoundComponent: () => (
     <div className="mx-auto max-w-xl px-6 py-32 text-center">

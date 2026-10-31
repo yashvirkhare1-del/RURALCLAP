@@ -1,4 +1,4 @@
-# FixTrust
+# RuralClap
 
 Create a landing page for my product with a clear headline, the main benefits, and a sign-up form. Make it clean and minimal: lots of white space, a neutral palette, one accent color.
 

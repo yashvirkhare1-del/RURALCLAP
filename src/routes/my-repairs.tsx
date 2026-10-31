@@ -8,9 +8,9 @@ import { cancelBooking, clearBookings, useBookings, type DemoBooking } from "@/l
 export const Route = createFileRoute("/my-repairs")({
   head: () => ({
     meta: [
-      { title: "My repairs — FixTrust" },
+      { title: "My repairs — RuralClap" },
       { name: "description", content: "A demo dashboard of upcoming appointments and repair history." },
-      { property: "og:title", content: "My repairs — FixTrust" },
+      { property: "og:title", content: "My repairs — RuralClap" },
       { property: "og:description", content: "Every repair, part and warranty in one place." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
