@@ -363,6 +363,7 @@ function Index() {
             ))}
           </div>
         </div>
+        </div>
       </section>
 
       {/* ── Scroll Expand image ── */}
