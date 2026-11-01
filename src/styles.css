@@ -744,18 +744,6 @@ button:active { transform: scale(.98); }
 .search-field select { appearance: none; cursor: pointer; }
 .hero-visual {
   isolation: isolate;
-  background: radial-gradient(circle at 52% 42%, color-mix(in oklab, var(--primary) 18%, transparent), transparent 62%);
-}
-.hero-visual::before {
-  content: "";
-  position: absolute;
-  inset: 8% 5% 4%;
-  border-radius: 50%;
-  background: color-mix(in oklab, var(--primary) 18%, transparent);
-  filter: blur(48px);
-  opacity: .75;
-  pointer-events: none;
-  z-index: -1;
 }
 .hero-visual::after {
   content: "";
@@ -767,17 +755,18 @@ button:active { transform: scale(.98); }
 }
 .hero-person-image {
   display: block;
-  object-position: center top;
+  object-position: center 8%;
   filter: saturate(.92) contrast(1.03);
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%), linear-gradient(180deg, transparent 0%, black 5%, black 94%, transparent 100%);
   -webkit-mask-composite: source-in;
   mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%), linear-gradient(180deg, transparent 0%, black 5%, black 94%, transparent 100%);
   mask-composite: intersect;
+  transform: translateY(-12px);
   animation: hero-person-enter 1s cubic-bezier(.2,.7,.2,1) both;
 }
 @keyframes hero-person-enter {
   from { opacity: 0; transform: translateY(18px) scale(1.03); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 1; transform: translateY(-12px) scale(1); }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-person-image { animation: none; }
