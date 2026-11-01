@@ -25,8 +25,8 @@ export function Header() {
   }, []);
   return (
     <header className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? "border-b border-border bg-background/85 backdrop-blur-lg" : "bg-transparent"}`}>
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:py-3.5">
-        <Link to="/" aria-label="RuralClap home"><Brand className="h-12" /></Link>
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2.5 lg:py-3">
+        <Link to="/" aria-label="RuralClap home"><Brand className="h-[3.75rem]" /></Link>
         <nav className="hidden items-center gap-6 lg:gap-7 md:flex">
           {nav.map((n) => (
             <Link key={n.to} to={n.to} className="nav-link text-sm text-muted-foreground transition-colors hover:text-foreground" activeProps={{ className: "text-sm text-foreground" }}>{n.label}</Link>
