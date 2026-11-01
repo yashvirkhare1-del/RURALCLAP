@@ -755,3 +755,21 @@ button:active { transform: scale(.98); }
   .hero-search { padding: 1rem; }
   .offer-grid > div { flex-basis: 88%; }
 }
+
+/* ── Dark-mode contrast: light text on dark (bg-ink) panels ── */
+.dark .bg-ink.text-primary-foreground,
+.dark .bg-ink .text-primary-foreground { color: oklch(0.96 0.005 110) !important; }
+.dark .bg-ink .opacity-60 { opacity: 0.75; }
+.dark .bg-ink .opacity-80 { opacity: 0.9; }
+.dark .bg-ink .border-primary-foreground\/10,
+.dark .bg-ink .border-primary-foreground\/15 { border-color: oklch(0.96 0.005 110 / 18%) !important; }
+.dark .bg-ink .bg-primary-foreground\/5 { background-color: oklch(0.96 0.005 110 / 7%) !important; }
+.dark .bg-ink .text-highlight { color: oklch(0.84 0.15 125) !important; }
+
+/* Form controls & native dropdowns stay readable in both themes */
+.dark { color-scheme: dark; }
+.dark select, .dark input, .dark textarea { color: var(--foreground); }
+.dark input::placeholder, .dark textarea::placeholder { color: var(--muted-foreground); opacity: 1; }
+select option, select optgroup { background-color: var(--card); color: var(--card-foreground); }
+select option:checked { background-color: var(--accent); color: var(--accent-foreground); }
+select:disabled, input:disabled, button:disabled { opacity: 0.6; }
