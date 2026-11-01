@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { CalendarClock, ClipboardList, History, Wrench } from "lucide-react";
+import { Bell, CalendarClock, ClipboardList, History, Home, ShieldCheck, Wrench } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
 import { categoryName, inr, repairs } from "@/lib/data";
 import { cancelBooking, clearBookings, useBookings, type DemoBooking } from "@/lib/bookings";
@@ -49,6 +49,23 @@ function Page() {
           </Reveal>
         ))}
       </div>
+
+      <Reveal className="mt-10 rounded-3xl border border-border bg-card p-7 md:p-8">
+        <div className="flex flex-wrap items-start justify-between gap-5">
+          <div>
+            <p className="section-eyebrow">My home · demo</p>
+            <h2 className="mt-3 font-display text-3xl">A clearer view of home care</h2>
+            <p className="mt-2 max-w-lg text-sm leading-relaxed text-muted-foreground">Keep appliance details, warranty notes and maintenance reminders close to your repair history.</p>
+          </div>
+          <div className="flex size-12 items-center justify-center rounded-2xl bg-accent text-accent-foreground"><Home className="size-6" /></div>
+        </div>
+        <div className="mt-7 grid gap-3 md:grid-cols-3">
+          <div className="rounded-2xl border border-border bg-muted/30 p-4"><div className="flex items-center gap-2 text-sm font-medium"><Wrench className="size-4 text-primary" /> Washing machine</div><p className="mt-2 text-xs text-muted-foreground">Front-load · 7kg</p></div>
+          <div className="rounded-2xl border border-border bg-muted/30 p-4"><div className="flex items-center gap-2 text-sm font-medium"><ShieldCheck className="size-4 text-primary" /> Warranty watch</div><p className="mt-2 text-xs text-muted-foreground">Drain pump coverage until Nov 2026</p></div>
+          <div className="rounded-2xl border border-border bg-muted/30 p-4"><div className="flex items-center gap-2 text-sm font-medium"><Bell className="size-4 text-primary" /> Next reminder</div><p className="mt-2 text-xs text-muted-foreground">AC service · 30 Oct 2026</p></div>
+        </div>
+        <p className="mt-5 text-xs text-muted-foreground">All details shown here are illustrative demo data stored in this browser.</p>
+      </Reveal>
 
       <div role="tablist" aria-label="Repairs" className="mt-12 inline-flex rounded-full border border-border bg-card p-1">
         {tabs.map(({ id, label, I }) => (
