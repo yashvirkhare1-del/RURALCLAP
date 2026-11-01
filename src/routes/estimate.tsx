@@ -60,7 +60,7 @@ function Page() {
           </fieldset>
           <label className="flex cursor-pointer items-center justify-between gap-4 rounded-xl border border-border bg-card px-4 py-3.5 text-sm">
             <span>3. Include likely replacement parts</span>
-            <input type="checkbox" checked={includeParts} onChange={(e) => setIncludeParts(e.target.checked)} className="size-4 accent-[var(--primary)]" />
+            <input type="checkbox" checked={includeParts} onChange={(e) => setIncludeParts(e.target.checked)} className="size-4 accent-[var(--primary)] focus-visible:outline-2 focus-visible:outline-primary" />
           </label>
         </div>
 
