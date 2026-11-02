@@ -606,6 +606,16 @@ button:active { transform: scale(.98); }
 .dark .hero-split-bg::after {
   background: radial-gradient(ellipse, color-mix(in oklab, var(--accent) 18%, transparent) 0%, transparent 70%);
 }
+.hero-technician {
+  display: block;
+  transform: translateY(-1rem);
+}
+@media (max-width: 1023px) {
+  .hero-technician { transform: translateY(-.5rem); }
+}
+@media (max-width: 639px) {
+  .hero-technician-wrap { margin-top: -.5rem; }
+}
 
 /* ── Floating hero cards ── */
 .float-card {

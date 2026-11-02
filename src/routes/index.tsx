@@ -2,7 +2,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { Search, X, WashingMachine, Zap, Droplets, Tv, Hammer, Wrench, ReceiptText, ShieldCheck, FolderClock, ArrowRight, ArrowUpRight, Sparkles, CalendarCheck, ClipboardList, CheckCircle2, MapPin } from "lucide-react";
 import workbench from "@/assets/workbench.jpg";
-import heroPhoto from "@/assets/hero-technician-cutout.png";
+import heroPhoto from "@/assets/ruralclap-technician-transparent.png";
 import { Button } from "@/components/ui/button";
 import { Offers } from "@/components/site/Offers";
 import { ExpandingImage, ScrollText, SpotlightCard, SplitText, TextShuffle, ScrollStack, TiltCard } from "@/components/site/Effects";
@@ -99,9 +99,9 @@ function Index() {
           </div>
 
           {/* Right visual with floating cards */}
-          <div className="relative order-first ml-auto w-52 animate-rise sm:w-full lg:order-none lg:-translate-y-12 lg:pl-8" style={{ animationDelay: "400ms" }}>
-            <div className="relative ml-auto w-full max-w-[32rem]">
-              <img src={heroPhoto} alt="Professional repair technician with diagnostic tools" width={800} height={1200} fetchPriority="high" className="block h-auto w-full object-contain" />
+          <div className="hero-technician-wrap relative order-last ml-auto w-full animate-rise sm:w-full lg:order-none lg:-translate-y-12 lg:pl-8" style={{ animationDelay: "400ms" }}>
+            <div className="relative ml-auto w-full max-w-[36rem]">
+              <img src={heroPhoto} alt="RuralClap technician holding plumbing tools" width={1200} height={1312} fetchPriority="high" className="hero-technician block h-auto w-full object-contain" />
             </div>
 
             {/* Floating card: booking confirmation */}
