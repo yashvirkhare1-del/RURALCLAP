@@ -99,7 +99,7 @@ function Index() {
           </div>
 
           {/* Right visual with floating cards */}
-          <div className="relative animate-rise lg:-translate-y-12 lg:pl-8" style={{ animationDelay: "400ms" }}>
+          <div className="relative order-first ml-auto w-52 animate-rise sm:w-full lg:order-none lg:-translate-y-12 lg:pl-8" style={{ animationDelay: "400ms" }}>
             <div className="relative ml-auto w-full max-w-[32rem]">
               <img src={heroPhoto} alt="Professional repair technician with diagnostic tools" width={800} height={1200} fetchPriority="high" className="block h-auto w-full object-contain" />
             </div>
