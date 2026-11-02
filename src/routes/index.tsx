@@ -2,6 +2,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { Search, X, WashingMachine, Zap, Droplets, Tv, Hammer, Wrench, ReceiptText, ShieldCheck, FolderClock, ArrowRight, ArrowUpRight, Sparkles, CalendarCheck, ClipboardList, CheckCircle2, MapPin } from "lucide-react";
 import workbench from "@/assets/workbench.jpg";
+import heroPhoto from "@/assets/hero-technician-cutout.png";
 import { Button } from "@/components/ui/button";
 import { Offers } from "@/components/site/Offers";
 import { ExpandingImage, ScrollText, SpotlightCard, SplitText, TextShuffle, ScrollStack, TiltCard } from "@/components/site/Effects";
@@ -9,8 +10,6 @@ import { Reveal } from "@/components/site/Reveal";
 import { Marquee } from "@/components/site/Layout";
 import { TechCard } from "@/components/site/TechCard";
 import { categories, technicians } from "@/lib/data";
-
-const heroPhoto = "https://images.pexels.com/photos/6870326/pexels-photo-6870326.jpeg?auto=compress&cs=tinysrgb&h=1200&w=900";
 
 const howItWorksSteps = [
   { num: "1", icon: ClipboardList, title: "Choose a service", desc: "Browse categories and describe what needs fixing. The more detail, the better the match." },
@@ -100,10 +99,9 @@ function Index() {
           </div>
 
           {/* Right visual with floating cards */}
-          <div className="relative animate-rise lg:pl-8" style={{ animationDelay: "400ms" }}>
-            <div className="hero-visual relative overflow-hidden rounded-[1.75rem] border border-border shadow-[0_30px_80px_-30px_var(--ink)]">
-              <img src={heroPhoto} alt="Professional repair technician with diagnostic tools" width={900} height={1200} fetchPriority="high" className="aspect-[4/5] w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent" />
+          <div className="relative animate-rise lg:-translate-y-12 lg:pl-8" style={{ animationDelay: "400ms" }}>
+            <div className="relative ml-auto w-full max-w-[32rem]">
+              <img src={heroPhoto} alt="Professional repair technician with diagnostic tools" width={800} height={1200} fetchPriority="high" className="block h-auto w-full object-contain" />
             </div>
 
             {/* Floating card: booking confirmation */}
