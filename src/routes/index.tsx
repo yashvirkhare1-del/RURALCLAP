@@ -2,6 +2,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { Search, X, WashingMachine, Zap, Droplets, Tv, Hammer, Wrench, ReceiptText, ShieldCheck, FolderClock, ArrowRight, ArrowUpRight, Sparkles, CalendarCheck, ClipboardList, CheckCircle2, MapPin } from "lucide-react";
 import workbench from "@/assets/workbench.jpg";
+import heroPhoto from "@/assets/hero-technician-cutout.png";
 import { Button } from "@/components/ui/button";
 import { Offers } from "@/components/site/Offers";
 import { ExpandingImage, ScrollText, SpotlightCard, SplitText, TextShuffle, ScrollStack, TiltCard } from "@/components/site/Effects";
@@ -9,8 +10,6 @@ import { Reveal } from "@/components/site/Reveal";
 import { Marquee } from "@/components/site/Layout";
 import { TechCard } from "@/components/site/TechCard";
 import { categories, technicians } from "@/lib/data";
-
-const heroPhoto = "/images/mrcheas.jpeg";
 
 const howItWorksSteps = [
   { num: "1", icon: ClipboardList, title: "Choose a service", desc: "Browse categories and describe what needs fixing. The more detail, the better the match." },
@@ -81,7 +80,7 @@ function Index() {
       {/* ── Split hero with floating UI cards ── */}
       <section className="hero-split">
         <div className="hero-split-bg" />
-        <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-6 pb-20 pt-28 lg:grid-cols-[1.05fr_.95fr] lg:pb-32 lg:pt-36">
+        <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-6 pb-20 pt-28 lg:grid-cols-[1.2fr_1fr] lg:pb-32 lg:pt-36">
           <div>
             <span className="hero-badge animate-rise">Home repair, reconsidered</span>
             <SplitText text="Reliable home services. Right where you need them." highlight="Right" delay={300} className="mt-6 max-w-3xl font-display text-5xl leading-[0.9] sm:text-6xl lg:text-[5.5rem]" />
@@ -97,27 +96,61 @@ function Index() {
               <span className="flex items-center gap-2"><ReceiptText className="size-4 text-primary" />Itemized estimates</span>
               <span className="flex items-center gap-2"><FolderClock className="size-4 text-primary" />Repair records</span>
             </div>
-            <form onSubmit={search} className="hero-search mt-10 animate-rise" style={{ animationDelay: "1200ms" }}>
-              <div className="mb-4 flex items-center gap-2 text-sm font-semibold text-foreground"><Search className="size-4 text-primary" /> Find a professional for your repair</div>
-              <div className="grid gap-2">
-                <label className="search-field"><MapPin className="size-4 text-primary" /><input aria-label="Location" value={loc} onChange={(e) => setLoc(e.target.value)} maxLength={60} placeholder="Your area" /></label>
-                <label className="search-field"><Wrench className="size-4 text-primary" /><select aria-label="Category" value={cat} onChange={(e) => setCat(e.target.value)}><option value="">Any service</option>{categories.map((c) => <option key={c.slug} value={c.slug}>{c.name}</option>)}</select></label>
-                <label className="search-field"><Search className="size-4 text-primary" /><span className="relative min-w-0 flex-1"><input aria-label="Problem" value={q} onChange={(e) => setQ(e.target.value)} maxLength={80} placeholder="What needs fixing?" />{q && <Button variant="ghost" size="icon" type="button" aria-label="Clear" onClick={() => setQ("")} className="absolute right-0 top-1/2 size-7 -translate-y-1/2 text-muted-foreground"><X className="size-4" /></Button>}</span></label>
-                <Button type="submit" className="h-auto rounded-xl bg-ink px-7 py-4 text-highlight hover:bg-ink/90"><Search className="size-4" />Search</Button>
-              </div>
-            </form>
           </div>
 
           {/* Right visual with floating cards */}
-          <div className="relative animate-rise lg:pl-8" style={{ animationDelay: "400ms" }}>
-            <div className="hero-visual relative overflow-hidden rounded-[1.75rem]">
-              <img src={heroPhoto} alt="Professional plumber holding repair tools" width={1024} height={1536} fetchPriority="high" className="hero-person-image aspect-[2/3] w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent" />
+          <div className="relative order-first ml-auto w-52 animate-rise sm:w-full lg:order-none lg:-translate-y-12 lg:pl-8" style={{ animationDelay: "400ms" }}>
+            <div className="relative ml-auto w-full max-w-[32rem]">
+              <img src={heroPhoto} alt="Professional repair technician with diagnostic tools" width={800} height={1200} fetchPriority="high" className="block h-auto w-full object-contain" />
+            </div>
+
+            {/* Floating card: booking confirmation */}
+            <div className="float-card right-[-1rem] top-12 hidden w-56 p-4 sm:block">
+              <div className="flex items-center gap-3">
+                <div className="svc-icon !w-10 !h-10 shrink-0">
+                  <CalendarCheck className="size-5 text-primary" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-sm font-semibold">Visit confirmed</p>
+                  <p className="text-xs text-muted-foreground">Today · 4:00 PM</p>
+                </div>
+              </div>
+              <div className="mt-3 flex items-center gap-2">
+                <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
+                  <div className="h-full w-3/4 rounded-full bg-primary" />
+                </div>
+                <span className="text-[10px] font-medium text-primary">75%</span>
+              </div>
+            </div>
+
+            {/* Floating card: estimate preview */}
+            <div className="float-card bottom-16 left-[-1rem] hidden w-52 p-4 lg:block">
+              <div className="flex items-center justify-between">
+                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Estimate</p>
+                <ReceiptText className="size-4 text-primary" />
+              </div>
+              <div className="mt-2 space-y-1.5 text-sm">
+                <div className="flex justify-between"><span className="text-muted-foreground">Inspection</span><span>₹199</span></div>
+                <div className="flex justify-between"><span className="text-muted-foreground">Labour</span><span>₹300</span></div>
+                <div className="flex justify-between border-t border-border pt-1.5 font-semibold"><span>Total</span><span className="text-primary">₹499</span></div>
+              </div>
             </div>
 
           </div>
         </div>
 
+        {/* ── Search bar ── */}
+        <div className="relative z-10 mx-auto max-w-7xl px-6 pb-8">
+          <form onSubmit={search} className="hero-search animate-rise" style={{ animationDelay: "1200ms" }}>
+            <div className="mb-4 flex items-center gap-2 text-sm font-semibold text-foreground"><Search className="size-4 text-primary" /> Find a professional for your repair</div>
+            <div className="grid gap-2 md:grid-cols-[1fr_1fr_1.4fr_auto]">
+              <label className="search-field"><MapPin className="size-4 text-primary" /><input aria-label="Location" value={loc} onChange={(e) => setLoc(e.target.value)} maxLength={60} placeholder="Your area" /></label>
+              <label className="search-field"><Wrench className="size-4 text-primary" /><select aria-label="Category" value={cat} onChange={(e) => setCat(e.target.value)}><option value="">Any service</option>{categories.map((c) => <option key={c.slug} value={c.slug}>{c.name}</option>)}</select></label>
+              <label className="search-field"><Search className="size-4 text-primary" /><span className="relative min-w-0 flex-1"><input aria-label="Problem" value={q} onChange={(e) => setQ(e.target.value)} maxLength={80} placeholder="What needs fixing?" />{q && <Button variant="ghost" size="icon" type="button" aria-label="Clear" onClick={() => setQ("")} className="absolute right-0 top-1/2 size-7 -translate-y-1/2 text-muted-foreground"><X className="size-4" /></Button>}</span></label>
+              <Button type="submit" className="h-auto rounded-xl bg-ink px-7 py-4 text-highlight hover:bg-ink/90"><Search className="size-4" />Search</Button>
+            </div>
+          </form>
+        </div>
       </section>
 
       {/* ── Stats strip ── */}

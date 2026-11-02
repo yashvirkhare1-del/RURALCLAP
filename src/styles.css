@@ -742,34 +742,14 @@ button:active { transform: scale(.98); }
   outline: none;
 }
 .search-field select { appearance: none; cursor: pointer; }
-.hero-visual {
-  isolation: isolate;
-}
+.hero-visual { isolation: isolate; }
 .hero-visual::after {
   content: "";
   position: absolute;
   inset: auto 8% 0;
-  height: 24%;
-  background: linear-gradient(180deg, transparent, color-mix(in oklab, var(--background) 72%, transparent));
+  height: 35%;
+  background: linear-gradient(180deg, transparent, color-mix(in oklab, var(--ink) 48%, transparent));
   pointer-events: none;
-}
-.hero-person-image {
-  display: block;
-  object-position: center 8%;
-  filter: saturate(.92) contrast(1.03);
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%), linear-gradient(180deg, transparent 0%, black 5%, black 94%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%), linear-gradient(180deg, transparent 0%, black 5%, black 94%, transparent 100%);
-  mask-composite: intersect;
-  transform: translateY(-12px);
-  animation: hero-person-enter 1s cubic-bezier(.2,.7,.2,1) both;
-}
-@keyframes hero-person-enter {
-  from { opacity: 0; transform: translateY(18px) scale(1.03); }
-  to { opacity: 1; transform: translateY(-12px) scale(1); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-person-image { animation: none; }
 }
 @media (max-width: 639px) {
   .hero-search { padding: 1rem; }
